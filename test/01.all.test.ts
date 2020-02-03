@@ -1,4 +1,4 @@
-import { a } from "./../src/xx";
+import { a } from "../src/xx";
 
 describe("AppController (e2e)", () => {
   beforeEach(async () => {
