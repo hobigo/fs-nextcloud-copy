@@ -1,4 +1,3 @@
-import { a } from "../src/xx";
 
 describe("AppController (e2e)", () => {
   beforeEach(async () => {
@@ -8,6 +7,5 @@ describe("AppController (e2e)", () => {
   it("/ (GET)", () => {
     console.log("test get");
     console.log("Hello");
-    a();
   });
 });
