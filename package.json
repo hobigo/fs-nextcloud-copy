@@ -1,18 +1,29 @@
 {
   "name": "fs-nextcloud-copy",
-  "version": "0.0.2",
-  "description": "",
-  "author": "",
+  "version": "0.0.3",
+  "description": "Copy files from file system to nextcloud recursively",
+  "author": "Holger Gockel",
+  "keywords": [
+    "nextcloud",
+    "file system",
+    "copy",
+    "upload",
+    "file"
+  ],
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
-  "license": "MIT",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hobigo/fs-nextcloud-copy.git"
+  },
   "scripts": {
-    "record": "nyc mocha -r ts-node/register test/*test.ts --record",    
+    "record": "nyc mocha -r ts-node/register test/*test.ts --record",
     "build": "node ./node_modules/typescript/bin/tsc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "mocha -r ts-node/register src/test/*test.ts",    
-    "cover": "nyc mocha -r ts-node/register test/*test.ts && nyc report --reporter=text-lcov > coverage.lcov",    
+    "test": "mocha -r ts-node/register src/test/*test.ts",
+    "cover": "nyc mocha -r ts-node/register test/*test.ts && nyc report --reporter=text-lcov > coverage.lcov",
     "start": "node ./dist/src/main.js"
   },
   "dependencies": {
@@ -55,5 +66,9 @@
     ],
     "all": true,
     "report-dir": "./coverage"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/hobigo/fs-nextcloud-copy/issues"
+  },
+  "homepage": "https://github.com/hobigo/fs-nextcloud-copy"
 }
