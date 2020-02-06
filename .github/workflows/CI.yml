@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'      
+        registry-url: 'https://registry.npmjs.org'
+        
+    - name: Install Dependencies
+      run: npm install  
+      
+    - name: Build
+      run: npm run build 
+      
+    - name: Run tests and coverage
+      run: npm run cover 
+      
+    - name: Upload to Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path-to-lcov: ./lcov.info
+        
+    - name: Determine. if the version have been updated
+      uses: EndBug/version-check@v1.1.1
+      id: versionChange
+        
+    - name: Check if version has been changed
+      if: steps.versionChange.outputs.changed == 'true'
+      run: 'echo "Version change! -> ${{ steps.versionChange.outputs.type }}"'
+      
+    - name: Publish package to NPM
+      if: steps.versionChange.outputs.changed == 'true'
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        
