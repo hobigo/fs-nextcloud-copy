@@ -1,6 +1,6 @@
 {
   "name": "fs-nextcloud-copy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "author": "",
   "main": "dist/main.js",
