@@ -1,0 +1,15 @@
+.github
+.nyc_output
+coverage
+dist/test
+node_modules
+src
+test
+.env
+.gitattributes
+.gitignore
+coverage.lcov
+tsconfig.json
+tslint.json
+tsconfig.build.json
+.vscode
