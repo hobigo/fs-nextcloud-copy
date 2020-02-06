@@ -30,7 +30,7 @@ jobs:
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./lcov.info
+        path-to-lcov: ./coverage.lcov
         
     - name: Determine. if the version have been updated
       uses: EndBug/version-check@v1.1.1
