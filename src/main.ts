@@ -22,21 +22,3 @@ import { CopyJob, ICopyJobMemento, NextcloudClient } from "./copyJob";
   await job.start();
 
 })();
-
-/*
-import readdirp = require("readdirp");
-
-async function bootstrap() {
-  const readdirpOptions = {
-    fileFilter: "*.jsx",
-    alwaysStat: true,
-  };
-  // Use streams to achieve small RAM & CPU footprint.
-  // 1) Streams example with for-await.
-  for await (const entry of readdirp(".", readdirpOptions)) {
-    const { path, stats: { size } } = entry;
-    debug(`${JSON.stringify({ path, size })}`);
-  }
-}
-bootstrap();
-*/
