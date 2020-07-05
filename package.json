@@ -1,6 +1,6 @@
 {
   "name": "fs-nextcloud-copy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Copy files from file system to nextcloud recursively",
   "author": "Holger Gockel",
   "keywords": [
@@ -18,54 +18,27 @@
     "url": "git+https://github.com/hobigo/fs-nextcloud-copy.git"
   },
   "scripts": {
-    "record": "nyc mocha -r ts-node/register test/*test.ts --record",
     "build": "node ./node_modules/typescript/bin/tsc",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "test": "mocha -r ts-node/register src/test/*test.ts",
-    "cover": "nyc mocha -r ts-node/register test/*test.ts && nyc report --reporter=text-lcov > coverage.lcov",
-    "start": "node ./dist/src/main.js"
+    "start": "node ./dist/main.js"
   },
   "dependencies": {
-    "debug": "^4.1.1",
-    "dotenv": "^8.2.0",
-    "env": "0.0.2",
-    "nextcloud-node-client": "^1.1.6",
-    "readdirp": "^3.3.0"
+    "nextcloud-node-client": "^1.5.1"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.7",
+    "@types/chai": "^4.2.11",
     "@types/debug": "^4.1.5",
     "@types/dotenv": "^8.2.0",
-    "@types/mocha": "^7.0.1",
-    "@types/node": "^13.7.0",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.13.12",
     "chai": "^4.2.0",
-    "mocha": "^7.0.0",
-    "mocked-env": "^1.3.2",
-    "nyc": "^15.0.0",
     "prettier": "^1.18.2",
-    "ts-loader": "^6.1.1",
-    "ts-node": "^8.4.1",
+    "ts-loader": "^6.2.2",
+    "ts-node": "^8.10.2",
     "tsconfig-paths": "^3.9.0",
-    "tslint": "^6.0.0",
-    "typescript": "^3.6.3"
-  },
-  "nyc": {
-    "extension": [
-      ".ts",
-      ".tsx"
-    ],
-    "exclude": [
-      "**/*.d.ts",
-      "**/*.js",
-      "test/**/*.ts"
-    ],
-    "reporter": [
-      "html",
-      "lcov"
-    ],
-    "all": true,
-    "report-dir": "./coverage"
+    "tslint": "^6.1.2",
+    "typescript": "^3.9.6"
   },
   "bugs": {
     "url": "https://github.com/hobigo/fs-nextcloud-copy/issues"
