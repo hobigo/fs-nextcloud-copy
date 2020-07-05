@@ -1,6 +1,6 @@
 {
   "name": "fs-nextcloud-copy",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Copy files from file system to nextcloud recursively",
   "author": "Holger Gockel",
   "keywords": [
